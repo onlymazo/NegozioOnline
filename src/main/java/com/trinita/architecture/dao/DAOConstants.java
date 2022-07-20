@@ -19,4 +19,6 @@ public interface DAOConstants {
 	String DELETE_ORDINE = "delete from ordine where id_ordine=?";
 	String SELECT_ORDINE_BYID = "select * from ordine where id_ordine=?";
 	
+	String SELECT_ORDINEARTICOLO = "da sostituire con quello vero, mi dava fastidio l'errore";
+	
 }
