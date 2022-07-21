@@ -1,3 +1,3 @@
-insert into utente(nome, nascita, username, password) values('Carmelo', '22-GIU-1990', 'cammelo', 'aeG$hU%Ak?m@T&80*d2V#Wd5G$hU%Ak?m@T&80*d2V#W46G$hU%Ak?m@T&80*d2V#Wa5G$hU%Ak?m@T&80*d2V#W8bG$hU%Ak?m@T&80*d2V#W4dG$hU%Ak?m@T&80*d2V#WdcG$hU%Ak?m@T&80*d2V#W28G$hU%Ak?m@T&80*d2V#WfbG$hU%Ak?m@T&80*d2V#WffG$hU%Ak?m@T&80*d2V#W34G$hU%Ak?m@T&80*d2V#Wa7G$hU%Ak?m@T&80*d2V#W98G$hU%Ak?m@T&80*d2V#Wd3G$hU%Ak?m@T&80*d2V#Wc4G$hU%Ak?m@T&80*d2V#W29G$hU%Ak?m@T&80*d2V#W');
+insert into utente(nome, nascita, username, password) values('Carmelo', '1990-06-22', 'cammelo', 'aeG$hU%Ak?m@T&80*d2V#Wd5G$hU%Ak?m@T&80*d2V#W46G$hU%Ak?m@T&80*d2V#Wa5G$hU%Ak?m@T&80*d2V#W8bG$hU%Ak?m@T&80*d2V#W4dG$hU%Ak?m@T&80*d2V#WdcG$hU%Ak?m@T&80*d2V#W28G$hU%Ak?m@T&80*d2V#WfbG$hU%Ak?m@T&80*d2V#WffG$hU%Ak?m@T&80*d2V#W34G$hU%Ak?m@T&80*d2V#Wa7G$hU%Ak?m@T&80*d2V#W98G$hU%Ak?m@T&80*d2V#Wd3G$hU%Ak?m@T&80*d2V#Wc4G$hU%Ak?m@T&80*d2V#W29G$hU%Ak?m@T&80*d2V#W');
 
 commit
