@@ -6,7 +6,7 @@ public class Ordine {
 	private long idOrdine;
 	private double totale;
 	private Date data;
-	private String username;
+	private long id_user;
 
 	public long getIdOrdine() {
 		return idOrdine;
@@ -32,17 +32,17 @@ public class Ordine {
 		this.data = data;
 	}
 
-	public String getUsername() {
-		return username;
+	public long getIdUser() {
+		return id_user;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public void setIdUser(long id_user) {
+		this.id_user = id_user;
 	}
 
 	@Override
 	public String toString() {
-		return "Ordine [idOrdine=" + idOrdine + ", totale=" + totale + ", data=" + data + ", username=" + username
+		return "Ordine [idOrdine=" + idOrdine + ", totale=" + totale + ", data=" + data + ", id_user=" + id_user
 				+ "]";
 	}
 }

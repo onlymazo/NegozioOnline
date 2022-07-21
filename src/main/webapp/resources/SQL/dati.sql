@@ -1,9 +1,9 @@
 ----------------------------------------UTENTE
-drop if exists table utente cascade;
-drop if exists table articolo cascade;
-drop if exists table ordine cascade;
-drop if exists table ordine_articolo cascade;
-drop if exists table immagine cascade;
+drop table if exists utente cascade;
+drop table if exists articolo cascade;
+drop table if exists ordine cascade;
+drop table if exists ordine_articolo cascade;
+drop table if exists immagine cascade;
 
 create table utente(
 id_user int auto_increment,
@@ -47,7 +47,7 @@ descrizione varchar(500) not null
 );
 
 ----------------------------------------AMMINISTRATORE
-drop if exists table amministratore;
+drop table if exists amministratore cascade;
 drop view report;
 
 create table amministratore(
