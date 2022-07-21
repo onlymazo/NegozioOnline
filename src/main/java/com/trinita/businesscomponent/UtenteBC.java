@@ -22,6 +22,14 @@ public class UtenteBC {
 			DBAccess.closeConnection();
 		}
 	}
+	
+	public void update(Utente u) throws SQLException, NamingException {
+		try {
+			uDAO.update(DBAccess.getConnection(), u);
+		} finally {
+			DBAccess.closeConnection();
+		}
+	}
 
 	public void delete(long id) throws SQLException, NamingException {
 		try {
