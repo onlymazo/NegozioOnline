@@ -58,7 +58,7 @@ constraint p_idadmin primary key(id_admin)
 );
 
 create view report as
-select utente.id_user, email, ordine.id_ordine, totale, sum(quantita) as qta
+select utente.id_user, username, ordine.id_ordine, totale, sum(quantita) as qta
 from utente, ordine, articolo, ordine_articolo
 where
 ordine.id_ordine = ordine_articolo.id_ordine
@@ -66,5 +66,5 @@ and
 articolo.id_articolo = ordine_articolo.id_articolo
 and
 utente.id_user = ordine.id_user
-group by utente.id_user, email, ordine.id_ordine, totale
+group by utente.id_user, username, ordine.id_ordine, totale
 order by utente.id_user, ordine.id_ordine;
