@@ -52,7 +52,7 @@ drop view report;
 
 create table amministratore(
 id_admin int auto_increment,
-username varchar(15),
+username varchar(15) not null unique,
 password varchar(2000) not null,
 constraint p_idadmin primary key(id_admin)
 );
