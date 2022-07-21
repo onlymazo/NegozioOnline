@@ -29,13 +29,11 @@ public class UtenteService {
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 	@Transactional
 	public Utente createUtente(
-		@FormParam("id_user") long id_user,
 		@FormParam("nome") String nome,
 		@FormParam("nascita") Date nascita,
 		@FormParam("username") String username,
 		@FormParam("password") String password) throws SQLException, NamingException {
 		Utente u = new Utente();
-		u.setId(id_user);
 		u.setNome(nome);
 		u.setNascita(nascita);
 		u.setUsername(username);

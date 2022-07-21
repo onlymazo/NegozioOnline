@@ -42,14 +42,11 @@ public class ArticoloService {
 	@Path("/create")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-	@Transactional
 	public Articolo createArticolo(
-			@FormParam("id_articolo") long idArticolo,
 			@FormParam("marca") String marca,
 			@FormParam("modello") String modello,
 			@FormParam("prezzo") double prezzo ) throws SQLException, NamingException {
 	Articolo a = new Articolo();
-	a.setIdArticolo(idArticolo);
 	a.setMarca(marca);
 	a.setModello(modello);
 	a.setPrezzo(prezzo);

@@ -11,8 +11,7 @@ import java.sql.Statement;
 import com.trinita.businesscomponent.model.Articolo;
 
 public class ArticoloDAO implements GenericDAO<Articolo>, DAOConstants {
-	private Statement stmt;
-	private ResultSet rs;
+
 
 	private ArticoloDAO() throws SQLException {
 
@@ -24,20 +23,13 @@ public class ArticoloDAO implements GenericDAO<Articolo>, DAOConstants {
 
 	@Override
 	public void create(Connection conn, Articolo entity) throws SQLException {
-		stmt = conn.createStatement(
-				ResultSet.TYPE_SCROLL_INSENSITIVE,
-				ResultSet.CONCUR_UPDATABLE);
-		rs = stmt.executeQuery(SELECT_ARTICOLO);
-		
-		if(entity != null) {
-			rs.moveToInsertRow();
-			rs.updateLong(1, entity.getIdArticolo());
-			rs.updateString(2, entity.getMarca());
-			rs.updateString(3, entity.getModello());
-			rs.updateDouble(4, entity.getPrezzo());
-			rs.insertRow();
-		}
-		
+		PreparedStatement ps;
+		ps = conn.prepareStatement(INSERT_ARTICOLO);
+		ps.setString(1, entity.getMarca());
+		ps.setString(2, entity.getModello());
+		ps.setDouble(3, entity.getPrezzo());
+		ps.execute();
+
 	}
 
 	@Override
