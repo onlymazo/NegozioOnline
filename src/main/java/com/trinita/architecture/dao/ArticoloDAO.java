@@ -49,7 +49,6 @@ public class ArticoloDAO implements GenericDAO<Articolo>, DAOConstants {
 		ps.setDouble(3, entity.getPrezzo());
 		ps.setLong(4, entity.getIdArticolo());
 		ps.execute();
-		conn.commit();
 	}
 
 	@Override
@@ -58,7 +57,6 @@ public class ArticoloDAO implements GenericDAO<Articolo>, DAOConstants {
 		ps = conn.prepareStatement(DELETE_ARTICOLO);
 		ps.setLong(1, id);
 		ps.execute();
-		conn.commit();
 	}
 
 	@Override

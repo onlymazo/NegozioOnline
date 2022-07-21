@@ -1,9 +1,11 @@
 package com.trinita.businesscomponent.service;
 
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -54,5 +56,36 @@ public class ArticoloService {
 	ArticoloBC aBC = new ArticoloBC();
 	aBC.create(a);
 	return a;
+	}
+	
+	
+	@PUT
+	@Path("/update")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+	@Transactional
+	public Articolo updateArticolo(
+			@FormParam("id_articolo") long idArticolo,
+			@FormParam("marca") String marca,
+			@FormParam("modello") String modello,
+			@FormParam("prezzo") double prezzo ) throws SQLException, NamingException {
+	Articolo a = new Articolo();
+	a.setIdArticolo(idArticolo);
+	a.setMarca(marca);
+	a.setModello(modello);
+	a.setPrezzo(prezzo);
+	ArticoloBC aBC = new ArticoloBC();
+	aBC.update(a);
+	return a;
+	}
+	
+	@DELETE
+	@Path("/delete/{id_articolo}")
+	@Produces(MediaType.TEXT_HTML)
+	@Transactional
+	public String deleteArticolo(@PathParam("id_articolo") long id_articolo) throws NamingException, SQLException {
+		ArticoloBC aBC = new ArticoloBC();
+		aBC.delete(id_articolo);
+		return "<html><head><title>Risposta</title></head><body>Record eliminato correttamente</body></html>";
 	}
 }
