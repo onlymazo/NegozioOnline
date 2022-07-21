@@ -6,17 +6,16 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import javax.sql.rowset.CachedRowSet;
-import javax.sql.rowset.RowSetProvider;
+
 
 import com.trinita.businesscomponent.model.Articolo;
 
 public class ArticoloDAO implements GenericDAO<Articolo>, DAOConstants {
-
-	private CachedRowSet rowSet;
+	private Statement stmt;
+	private ResultSet rs;
 
 	private ArticoloDAO() throws SQLException {
-		rowSet = RowSetProvider.newFactory().createCachedRowSet();
+
 	}
 
 	public static ArticoloDAO getFactory() throws SQLException {
@@ -25,16 +24,20 @@ public class ArticoloDAO implements GenericDAO<Articolo>, DAOConstants {
 
 	@Override
 	public void create(Connection conn, Articolo entity) throws SQLException {
-		rowSet.setCommand(SELECT_ARTICOLO);
-		rowSet.execute(conn);
-		rowSet.moveToInsertRow();
-		rowSet.updateLong(1, entity.getIdArticolo());
-		rowSet.updateString(2, entity.getMarca());
-		rowSet.updateString(3, entity.getModello());
-		rowSet.updateDouble(4, entity.getPrezzo());
-		rowSet.insertRow();
-		rowSet.moveToCurrentRow();
-		rowSet.acceptChanges();
+		stmt = conn.createStatement(
+				ResultSet.TYPE_SCROLL_INSENSITIVE,
+				ResultSet.CONCUR_UPDATABLE);
+		rs = stmt.executeQuery(SELECT_ARTICOLO);
+		
+		if(entity != null) {
+			rs.moveToInsertRow();
+			rs.updateLong(1, entity.getIdArticolo());
+			rs.updateString(2, entity.getMarca());
+			rs.updateString(3, entity.getModello());
+			rs.updateDouble(4, entity.getPrezzo());
+			rs.insertRow();
+		}
+		
 	}
 
 	@Override
