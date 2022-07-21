@@ -6,6 +6,7 @@ public interface DAOConstants {
 	String UPDATE_UTENTE = "update utente set nome=?, nascita=?, username=?, password=? where id_user=?";
 	String DELETE_UTENTE = "delete from utente where id_user=?";
 	String SELECT_UTENTE_BYID = "select * from utente where id_user=?";
+	String SELECT_UTENTEPASS = "select password from utente where id_user=?";
 	
 	String SELECT_ARTICOLO = "select * from articolo";
 	String INSERT_ARTICOLO = "insert into articolo(marca,modello,prezzo) values(?,?,?)";
@@ -20,5 +21,15 @@ public interface DAOConstants {
 	String SELECT_ORDINE_BYID = "select * from ordine where id_ordine=?";
 	
 	String SELECT_ORDINEARTICOLO = "select * from ordine_articolo";
+	String INSERT_ORDINEARTICOLO = "insert into ordine_articolo values(?,?,?)";
 	
+	String SELECT_IMMAGINE = "select * from immagine";
+	String INSERT_IMMAGINE = "insert into immagine values(?,?,?)";
+	String SELECT_IMMAGINE_BYID = "select * from immagine where id_immagine=?";
+	
+	String SELECT_REPORT = "select * from report";
+	
+	String SELECT_ADMIN = "select * from amministratore";
+	String SELECT_ADMIN_BYID = "select * from amministratore where id_admin=?";
+	String SELECT_ADMINPASS = "select password from amministratore where id_admin=?";
 }

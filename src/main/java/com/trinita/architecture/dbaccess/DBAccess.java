@@ -13,7 +13,7 @@ public class DBAccess {
 	
 	public static synchronized Connection getConnection() throws NamingException, SQLException {
 		InitialContext context = new InitialContext();
-		datasource = (DataSource) context.lookup("java:/MySQL");
+		datasource = (DataSource) context.lookup("java:/MySqlDS");
 		conn = datasource.getConnection();
 		return conn;
 	}
