@@ -51,9 +51,10 @@ drop if exists table amministratore;
 drop view report;
 
 create table amministratore(
+id_admin int auto_increment,
 username varchar(15),
 password varchar(2000) not null,
-constraint p_admin_username primary key(username)
+constraint p_idadmin primary key(id_admin)
 );
 
 create view report as
