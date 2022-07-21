@@ -28,7 +28,7 @@ public class OrdineService {
 	}
 	
 	@GET
-	@Path("/pianeta/{idOrdine}")
+	@Path("/ordini/{idOrdine}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Ordine getById(@PathParam("idOrdine") long idOrdine) throws SQLException, NamingException {
 		OrdineBC pBC = new OrdineBC();
